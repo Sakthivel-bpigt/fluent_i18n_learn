@@ -2,7 +2,7 @@ import 'package:fluent_i18n/fluent_i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class Strings {
+class AppLocalizationKeywords {
   static String get appTitle => translate("app-title");
   static String get homeTitle => translate("home-title");
   static String pushedButtonThisManyTimes(int counter) => translate(

@@ -2,11 +2,12 @@ import 'package:fluent_i18n/fluent_i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'strings.dart';
+import 'app_localization_keywords.dart';
 
 const List<Locale> SUPPORTED_LOCALES = [
   Locale('ja'),
   Locale('en'),
+  Locale('ta'),
 ];
 
 Locale locale = SUPPORTED_LOCALES.first;
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => Strings.appTitle,
+      onGenerateTitle: (context) => AppLocalizationKeywords.appTitle,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Strings.homeTitle),
+        title: Text(AppLocalizationKeywords.homeTitle),
       ),
       body: Container(
         padding: const EdgeInsets.all(10.0),
@@ -65,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              Strings.pushedButtonThisManyTimes(_counter),
+              AppLocalizationKeywords.pushedButtonThisManyTimes(_counter),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     }).toList(),
                     onChanged: (value) async {
                       if (value != null) {
-                        await Strings.applyLocale(value);
+                        await AppLocalizationKeywords.applyLocale(value);
                         setState(() {
                           locale = value;
                         });
@@ -98,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: Strings.increment,
+        tooltip: AppLocalizationKeywords.increment,
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
